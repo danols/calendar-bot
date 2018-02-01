@@ -10,16 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const sdk_1 = require("@maildots/sdk");
 const Util_1 = require("../datasource/Util");
-const ContactDataSource_1 = require("../datasource/ContactDataSource");
 const SDKDataSource_1 = require("../datasource/SDKDataSource");
 class StartConversation extends sdk_1.Intent {
     execute(args) {
         return __awaiter(this, void 0, void 0, function* () {
             let linkboxSDK = new SDKDataSource_1.SDKDataSource();
             let userAddress = args.UserAddress;
-            let contactClient = new ContactDataSource_1.ContactDataSource();
-            /* Example Get Contact Info */
-            let contactInfo = yield contactClient.getContactInfo('dankzer1@gmail.com');
             let msgData = yield linkboxSDK.sendWelcomeMsg(userAddress, Util_1.Util.encrypt(userAddress));
         });
     }

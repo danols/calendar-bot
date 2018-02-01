@@ -4,7 +4,6 @@ import { Intent } from '@maildots/sdk';
 import { Argument } from '@maildots/sdk';
 import { Util } from "../datasource/Util";
 
-import { ContactDataSource } from "../datasource/ContactDataSource";
 import { SDKDataSource } from "../datasource/SDKDataSource";
 
 export class StartConversation extends Intent<void>
@@ -14,11 +13,6 @@ export class StartConversation extends Intent<void>
   {
     let linkboxSDK = new SDKDataSource()
     let userAddress = args.UserAddress;
-
-    let contactClient = new ContactDataSource();
-
-    /* Example Get Contact Info */
-    let contactInfo = await contactClient.getContactInfo('dankzer1@gmail.com');
 
     let msgData = await linkboxSDK.sendWelcomeMsg
     (
