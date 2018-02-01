@@ -42,11 +42,9 @@ export class Index extends BaseComponent
 				description: 'A chance to hear more about Google developer products.',
 				start: {
 					dateTime: '2018-02-10T09:00:00-07:00',
-					timeZone: 'America/Los_Angeles',
 				},
 				end: {
 					dateTime: '2018-02-10T17:00:00-07:00',
-					timeZone: 'America/Los_Angeles',
 				},			
 			};
 			
